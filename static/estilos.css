@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'romantic';
+    src: url('../../../recursos/fuente.ttf') format('truetype');
+}
+
+h1,h2,body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#Encabezado {
+    margin: 15px;
+    font-size: 60px;
+    font-family: 'romantic', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+#Encabezado.fade {
+    opacity: 0;
+} 
+
+img{
+    height: 500px;
+    position: absolute; bottom: 0;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}

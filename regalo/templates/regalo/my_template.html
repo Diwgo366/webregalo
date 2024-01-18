@@ -1,0 +1,39 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'estilos.css' %}">
+    <title>Regalo</title>
+</head>
+<body>
+    <h1 id="Encabezado" >Un pequeño regalo para ti</h1>
+    <div class="image-container">
+        <img src="{% static 'animacion.gif' %}" alt="GIF animado">
+    </div>
+    <script>
+        var encabezado = document.getElementById("Encabezado");
+        var textos = ["Las flores que tanto le gustan", "A la niña que me gusta tanto", "Te amo"];
+        var i = 0;
+        var intervalo = setInterval(function() {
+            encabezado.classList.add("fade");
+            setTimeout(function() {
+                encabezado.innerHTML = textos[i];
+                encabezado.classList.remove("fade");
+                i = (i + 1) % textos.length;
+                if (i == 0) {
+                    clearInterval(intervalo);
+                }
+            }, 1000);
+        }, 2800);
+
+        var gif = document.getElementById("gif");
+        setTimeout(function() {
+            gif.pause();
+        }, 10000);
+
+    </script>
+
+</body>
+</html>
